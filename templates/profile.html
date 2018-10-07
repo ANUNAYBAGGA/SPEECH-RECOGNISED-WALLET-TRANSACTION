@@ -1,0 +1,89 @@
+<html lang ="en">
+
+<head>
+  <title>DEVFEST</title>
+  <meta charset = "utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="short description of this html page">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='font-awesome.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='animate.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='hamburgers.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='select2.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='util.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static' , filename='main.css')}}">
+  <link rel="icon" type="image/png" href="{{ url_for ('static' , filename='main.css')}}">
+
+</head>
+<body>
+
+  <div class="contact1">
+    <div class="container-contact1">
+      <div class="contact1-pic js-tilt" data-tilt>
+        <img src="{{url_for('static', filename='modi.jpg')}}" />
+        <center><h2> Mr. {{name}}</h2>
+        <h5> Balance: Rs. {{balance}} /-</h5>
+        <br>
+        <form method = "POST">
+        <button class="contact1-form-btn" name = 'log' value = 'log' type = 'submit'>
+          <span>
+            SEE PASSBOOK
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+          </span>
+        </button><br>
+        <button class="contact1-form-btn" name = 'voice' value = 'voice' type = 'submit'>
+          <span>
+            SPEAK TO SEND
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+          </span>
+        </button><br>
+        </form><p>Speak in :"send username amount rupees" format</p></center>
+      </div>
+
+      <form class="contact1-form validate-form" method = "POST">
+        <span class="contact1-form-title">
+          Send Money
+        </span>
+
+        <div class="wrap-input1 validate-input" data-validate = "Name is required">
+          <input class="input1" type="text" name="username_send" placeholder="Username of user you wish to send money to">
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="wrap-input1 validate-input" >
+          <input class="input1" type="text" name="amount" placeholder="Amount">
+          <span class="shadow-input1"></span>
+        </div>
+
+        <div class="container-contact1-form-btn">
+          <button class="contact1-form-btn" name = 'send' value = 'send' type = 'submit'>
+            <span>
+              SEND
+              <a href="#"><i class="fa fa-usd"></i></a>
+            </span>
+          </button>
+
+        </div>
+
+
+<p>{{data}}</p>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+</body>
+</html>
